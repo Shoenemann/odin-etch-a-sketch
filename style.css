@@ -22,5 +22,7 @@ div {
 .cellGrid {
     flex:auto;
     aspect-ratio: 1 / 1;
+    border: 1px solid;
+    border-color: black;
 }
 
