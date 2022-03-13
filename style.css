@@ -1,0 +1,26 @@
+body {
+    background-color: beige;
+}
+
+div {
+    display: flex;
+}
+
+.containerGrid {
+    justify-self: center;
+    align-self: center;
+    width: 0.8vw;
+    aspect-ratio: 1 / 1;
+    flex-direction: column;
+    background-color: azure;
+}
+
+.rowGrid {
+    flex: 1;
+}
+
+.cellGrid {
+    flex:auto;
+    aspect-ratio: 1 / 1;
+}
+
