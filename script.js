@@ -29,8 +29,38 @@ function createGrid(numRows) {
     for (let x = 0; x<numRows; x++) {
         for (let y = 0; y<numRows; y++) {
             cells[x][y] = createCell(x,y,rows[x])
+            addHoverFunctionality(cells[x][y])
         }
     }
+}
+
+//this function is from https://blog.logrocket.com/how-to-manipulate-css-colors-with-javascript-fb547113a1b8/
+const rgbToHue = (r,g,b) => Math.round(
+    Math.atan2(
+      Math.sqrt(3) * (g - b),
+      2 * r - g - b,
+    ) * 180 / Math.PI
+);
+
+function getRgbColor(cell) {
+    let rgbColorString = window.getComputedStyle(cell).backgroundColor
+    // g tells to match all occurrences
+    return rgbColorString.match(/(\d+)/g)
+}
+
+function changeColor(e) {
+    let cell = e.target
+    let colors = getRgbColor(cell)
+    let newColors = colors.map(val => {
+        let newVal =  val-32
+        if (newVal < 0) return 0
+        return newVal
+    })
+    cell.style.backgroundColor = `rgb(${newColors[0]},${newColors[1]},${newColors[2]})`
+}
+
+function addHoverFunctionality(cell) {
+    cell.addEventListener('mouseover',changeColor)
 }
 
 createGrid(16)
