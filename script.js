@@ -34,13 +34,6 @@ function createGrid(numRows) {
     }
 }
 
-//this function is from https://blog.logrocket.com/how-to-manipulate-css-colors-with-javascript-fb547113a1b8/
-const rgbToHue = (r,g,b) => Math.round(
-    Math.atan2(
-      Math.sqrt(3) * (g - b),
-      2 * r - g - b,
-    ) * 180 / Math.PI
-);
 
 function getRgbColor(cell) {
     let rgbColorString = window.getComputedStyle(cell).backgroundColor
