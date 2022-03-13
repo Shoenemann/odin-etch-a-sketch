@@ -56,4 +56,13 @@ function addHoverFunctionality(cell) {
     cell.addEventListener('mouseover',changeColor)
 }
 
+
 createGrid(16)
+btn = document.querySelector('.clearButton')
+btn.addEventListener('click', (e) => {
+    let numRows = parseInt(prompt('How many rows and columns? Min 1, Max 100'))
+    if(numRows < 1) numRows =1
+    if (numRows > 100) numRows = 100
+    getContainerGrid().textContent=''
+    createGrid(numRows)
+})
