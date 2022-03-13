@@ -1,5 +1,6 @@
 body {
     background-color: beige;
+    display: flex;
 }
 
 div {
@@ -7,7 +8,7 @@ div {
 }
 
 .containerGrid {
-    width: 75vw;
+    height: 80vh;
     aspect-ratio: 1 / 1;
     flex-direction: column;
     background-color: #f0ffff;
@@ -25,3 +26,8 @@ div {
     background-color: white;
 }
 
+.button {
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 8px;
+}
